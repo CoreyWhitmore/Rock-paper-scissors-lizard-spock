@@ -2,28 +2,23 @@ let player = ''
 let choices = [
     {
         name: 'Rock',
-        beats: ['Scissors', 'Lizard'],
-        loses: ['Paper', 'Spock']
+        beats: ['Scissors', 'Lizard']
     },
     {
         name: 'Paper',
-        beats: ['Rock', 'Spock'],
-        loses: ['Scissors', 'Lizard']
+        beats: ['Rock', 'Spock']
     },
     {
         name: 'Scissors',
-        beats: ['Paper', 'Lizard'],
-        loses: ['Rock', 'Spock']
+        beats: ['Paper', 'Lizard']
     },
     {
         name: 'Lizard',
-        beats: ['Paper', 'Spock'],
-        loses: ['Rock', 'Scissors']
+        beats: ['Paper', 'Spock']
     },
     {
         name: 'Spock',
-        beats: ['Rock', 'Scissors'],
-        loses: ['Paper', 'Lizard']
+        beats: ['Rock', 'Scissors']
     }
 ]
 
@@ -42,10 +37,10 @@ function play(selection) {
     let message = `You Picked: ${selection.name}, your opponent picked: ${computerSelect.name}`
     if (selection.beats.find(pick => pick == computerSelect.name)) {
         message += " - You Win!"
-    } else if (selection.loses.find(pick => pick == computerSelect.name)) {
-        message += " - You Lose :("
-    } else {
+    } else if (selection.name == computerSelect.name) {
         message += " - You Tied -.-"
+    } else {
+        message += " - You Lose :("
     }
 
 
